@@ -1,0 +1,169 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--texto);
+    background-color: var(--fondo);
+    background-image: url('img/bodyBackground.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+:root {
+    --fondo: #ffffff;
+    --texto: #000000;
+    --header-bg: #f0f0f0;
+    --header-text: #000000;
+    --nav-text: #007BFF;
+    --form-bg: #f9f9f9;
+    --button-bg: #007BFF;
+    --button-text: #ffffff;
+    --button-active-bg: #0056b3;
+    --footer-bg: #f0f0f0;
+    --footer-text: #000000;
+}
+
+#toggleMode:checked ~ body {
+    --fondo: #121212;
+    --texto: #e0e0e0;
+    --header-bg: #1e1e1e;
+    --header-text: #e0e0e0;
+    --nav-text: #76c7c0;
+    --form-bg: #2c2c2c;
+    --button-bg: #76c7c0;
+    --button-text: #121212;
+    --button-active-bg: #4a4a4a;
+    --footer-bg: #1e1e1e;
+    --footer-text: #e0e0e0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+header {
+    background: var(--header-bg);
+    color: var(--header-text);
+    padding: 20px 0;
+}
+
+header h1 {
+    text-align: center;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: var(--nav-text);
+    text-decoration: none;
+}
+
+#toggleMode {
+    display: none;
+}
+
+.toggleDark,
+.toggleLight {
+    cursor: pointer;
+    position: fixed;
+    z-index: 2;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    border: 1px solid var(--button-bg);
+    border-radius: 5px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+}
+
+.toggleDark {
+    background-color: var(--button-bg);
+}
+
+.toggleLight {
+    display: none;
+    background-color: var(--button-bg);
+}
+
+#toggleMode:checked ~ .toggleDark {
+    display: none;
+}
+
+#toggleMode:checked ~ .toggleLight {
+    display: block;
+}
+
+main {
+    padding: 20px 0;
+    position: relative;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+form {
+    background: var(--form-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+form input, form select, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    background: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+footer {
+    position: relative;
+    text-align: center;
+    color: var(--footer-text);
+    padding: 60px 20px;
+    overflow: hidden;
+}
+
+footer .footer-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+footer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
